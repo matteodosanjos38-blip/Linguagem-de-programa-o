@@ -1,0 +1,21 @@
+program ContaPalavras;
+
+var
+  frase: string;
+  i, cont: integer;
+
+begin
+  write('Digite a frase: ');
+  readln(frase);
+
+  cont := 0;
+
+  for i := 1 to length(frase) do
+  begin
+    if (frase[i] <> ' ') and
+       ((i = 1) or (frase[i - 1] = ' ')) then
+      cont := cont + 1;
+  end;
+
+  writeln('Quantidade de palavras: ', cont);
+end.
